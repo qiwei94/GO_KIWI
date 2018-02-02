@@ -1,10 +1,10 @@
 package main
 import "fmt"
-import "error"
+import "errors"
 
 func f1(arg int)(int,error){
 	if arg==42{
-		return -1,error.New("can't work with 42")
+		return -1,errors.New("can't work with 42")
 	}
 	return arg+3,nil
 }
@@ -26,7 +26,7 @@ func  f2(arg int) (int,error) {
 }
 
 func main() {
-	for _,i i:=range[]int{7,42}{
+	for _,i:=range[]int{7,42}{
 		if r,e :=f1(i);e!=nil{
 			fmt.Println("f1 failed:",e)
 		}else{
